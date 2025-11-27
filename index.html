@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>درس تفاعلي - أكاديمية الرواد</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- مهم: منع الأرشفة في محركات البحث -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- خط عربي جميل -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* ألوان مستوحاة من شعار مدارس أكاديمية الرواد الدولية (بنفسجي + ذهبي) */
+      --color-primary: #8a0e83;
+      --color-primary-soft: #f8d4ff;
+      --color-accent: #f4b321;
+      --color-bg: #fdf7ff;
+      --color-surface: #ffffff;
+      --color-text: #1f1029;
+      --color-muted: #7a6b8c;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-soft: 0 18px 40px rgba(38, 4, 67, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ffeefc 0, var(--color-bg) 45%, #ffffff 100%);
+      color: var(--color-text);
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(90deg, rgba(138,14,131,0.96), rgba(244,179,33,0.96));
+      color: #fff;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 6px 20px rgba(44, 5, 70, 0.35);
+    }
+
+    .top-bar-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .logo-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffe8aa, var(--color-accent));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.45);
+    }
+
+    .top-bar-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+      opacity: 0.95;
+    }
+
+    .top-chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 24px auto 40px;
+      padding: 0 16px 40px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(138,14,131,0.06), rgba(244,179,33,0.12));
+      border-radius: 28px;
+      padding: 24px 22px 22px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(138,14,131,0.3);
+      font-size: 0.85rem;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+
+    .hero h1 {
+      margin: 6px 0 10px;
+      font-size: clamp(1.6rem, 2.1vw, 2.1rem);
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    .hero-meta-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero-meta-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .meta-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 14px;
+      padding: 8px 10px;
+      border: 1px solid rgba(138,14,131,0.12);
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+    }
+
+    .meta-value {
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .hero-checklist {
+      background: rgba(255,255,255,0.96);
+      border-radius: 22px;
+      padding: 14px 16px 12px;
+      border: 1px dashed rgba(138,14,131,0.32);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-checklist-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .hero-tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+      font-size: 0.8rem;
+    }
+
+    .hero-mini-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      color: var(--color-muted);
+    }
+
+    /* Layout */
+    .layout {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span.icon {
+      width: 9px;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+    }
+
+    .section-subtitle {
+      margin: 0 0 14px;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    /* Activity card */
+    .activity-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: 10px 12px 12px;
+      border: 1px solid rgba(138,14,131,0.12);
+      box-shadow: 0 10px 24px rgba(41, 1, 62, 0.08);
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(41, 1, 62, 0.12);
+    }
+
+    .activity-header {
+      padding: 6px 4px 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: right;
+      color: inherit;
+      font: inherit;
+    }
+
+    .activity-main-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .activity-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .activity-type {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+
+    .activity-pill {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(244,179,33,0.12);
+      color: #9a6700;
+    }
+
+    .activity-toggle-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(138,14,131,0.28);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .activity-card.collapsed .activity-toggle-icon {
+      transform: rotate(180deg);
+      background: rgba(138,14,131,0.03);
+      color: var(--color-primary);
+    }
+
+    .activity-body {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: var(--color-muted);
+    }
+
+    .activity-card.collapsed .activity-body {
+      display: none;
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #f3ecff;
+      border: 1px solid rgba(138,14,131,0.16);
+      margin-bottom: 8px;
+    }
+
+    .iframe-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .activity-notes {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .activity-footer-tags {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.78rem;
+    }
+
+    .small-tag {
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(138,14,131,0.08);
+      color: var(--color-primary);
+    }
+
+    /* Side panel */
+    .side-panel {
+      background: rgba(255,255,255,0.96);
+      border-radius: 24px;
+      padding: 16px 16px 18px;
+      border: 1px solid rgba(138,14,131,0.16);
+      box-shadow: 0 14px 32px rgba(41,1,62,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .side-block {
+      padding: 10px 10px 8px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(138,14,131,0.03), rgba(244,179,33,0.04));
+      border: 1px dashed rgba(138,14,131,0.26);
+    }
+
+    .side-block h3 {
+      margin: 0 0 6px;
+      font-size: 0.96rem;
+    }
+
+    .side-block ul {
+      margin: 0;
+      padding-right: 18px;
+      padding-left: 0;
+      font-size: 0.86rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    .side-block li + li {
+      margin-top: 4px;
+    }
+
+    .lesson-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .step-pill {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(138,14,131,0.15);
+      font-size: 0.84rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .step-number {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.76rem;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      margin-top: 26px;
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* بوابة رمز الدخول */
+    #access-gate {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, #2b0038, #08000c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+
+    #access-gate-card {
+      background: rgba(255,255,255,0.98);
+      padding: 24px 20px;
+      border-radius: 18px;
+      width: min(360px, 92vw);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+      text-align: center;
+      font-family: "Tajawal", system-ui;
+    }
+
+    #access-gate-card h2 {
+      margin: 0 0 8px;
+      color:#8a0e83;
+    }
+
+    #access-gate-card p {
+      margin: 0 0 16px;
+      font-size: 0.9rem;
+      color:#5f4c70;
+    }
+
+    #access-code-input {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border:1px solid #c3b4dd;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    #access-code-button {
+      margin-top: 12px;
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:none;
+      background:#8a0e83;
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    #access-code-button:hover {
+      opacity: 0.95;
+    }
+
+    #access-error {
+      margin: 8px 0 0;
+      font-size: 0.8rem;
+      color:#c0132f;
+      display:none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- بوابة رمز الدخول -->
+  <div id="access-gate">
+    <div id="access-gate-card">
+      <h2>بوابة دخول الدرس</h2>
+      <p>
+        أدخل رمز الدرس الذي أعطاك إياه المعلم لعرض المحتوى التفاعلي.
+      </p>
+      <input id="access-code-input" type="password" placeholder="رمز الدرس">
+      <button id="access-code-button">دخول</button>
+      <p id="access-error">الرمز غير صحيح، حاول مرة أخرى.</p>
+    </div>
+  </div>
+
+  <!-- شريط علوي -->
+  <header class="top-bar">
+    <div class="top-bar-title">
+      <div class="logo-badge">IPA</div>
+      <div>
+        <div>درس تفاعلي تجريبي</div>
+        <div style="font-size: 0.78rem; opacity: .9;">مدارس أكاديمية الرواد الدولية</div>
+      </div>
+    </div>
+    <div class="top-bar-meta">
+      <span class="top-chip">🔥 تعلّم نشِط</span>
+      <span class="top-chip">🎯 فيديو + لعبة + ورقة عمل</span>
+      <span class="top-chip">💻 Wordwall · Kahoot · Edpuzzle · Liveworksheets</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          وحدة تفاعلية جاهزة للعرض
+        </div>
+        <h1>الوحدة: الأمن الرقمي والسلوك المسؤول على الإنترنت</h1>
+        <p>
+          في هذه الوحدة التفاعلية يتعرّف الطلبة إلى أساسيات الأمن الرقمي، 
+          كلمات المرور القوية، وآداب التواصل عبر الإنترنت من خلال فيديو تفاعلي، 
+          لعبة، وورقة عمل وأنشطة تقييمية.
+        </p>
+
+        <div class="hero-meta-grid">
+          <div class="meta-card">
+            <div class="meta-label">الصف المستهدف</div>
+            <div class="meta-value">الصف السابع / الثامن</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">المدة المقترحة</div>
+            <div class="meta-value">٤٥ - ٦٠ دقيقة</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">نمط التنفيذ</div>
+            <div class="meta-value">حصّة صفية أو عن بعد</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-checklist">
+        <div class="hero-checklist-title">
+          <span>سيخرج الطالب من الحصة وهو قادر على:</span>
+        </div>
+        <ul style="margin: 6px 0 0; padding-right: 18px; font-size: 0.86rem; color: var(--color-muted); line-height: 1.7;">
+          <li>تمييز السلوكيات الآمنة وغير الآمنة عند استخدام الإنترنت.</li>
+          <li>تطبيق قواعد بسيطة لإنشاء كلمة مرور قوية.</li>
+          <li>التفاعل مع محتوى رقمي باستخدام منصات تفاعلية متعددة.</li>
+        </ul>
+
+        <div class="hero-tags">
+          <span class="hero-tag">تكنولوجيا تعليم</span>
+          <span class="hero-tag">تعلم مدمج</span>
+          <span class="hero-tag">تعلم قائم على الألعاب</span>
+        </div>
+
+        <div class="hero-mini-steps">
+          <span>١️⃣ تمهيد قصير</span>
+          <span>٢️⃣ فيديو تفاعلي (Edpuzzle)</span>
+          <span>٣️⃣ لعبة Wordwall / Kahoot</span>
+          <span>٤️⃣ ورقة عمل Liveworksheets</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- المحتوى الرئيسي -->
+    <section class="layout">
+      <!-- عمود الأنشطة -->
+      <section>
+        <h2 class="section-title">
+          <span class="icon"></span>
+          <span>المحتوى التفاعلي</span>
+        </h2>
+        <p class="section-subtitle">
+          يمكنك استبدال الروابط في الإطارات أدناه (iframe) بأكواد
+          التضمين التي تحصل عليها من Wordwall، Kahoot، Edpuzzle، و Liveworksheets.
+        </p>
+
+        <div class="activities-grid">
+          <!-- Edpuzzle -->
+          <article class="activity-card">
+            <button class="activity-header" type="button">
+              <div class="activity-main-info">
+                <div class="activity-title">
+                  🎥 فيديو تمهيدي تفاعلي
+                  <span class="activity-pill">Edpuzzle</span>
+                </div>
+                <div class="activity-type">مشاهدة موجهة + أسئلة قصيرة داخل الفيديو</div>
+              </div>
+              <div class="activity-toggle-icon">−</div>
+            </button>
+            <div class="activity-body">
+              <div class="iframe-wrapper">
+                <!-- استبدل قيمة src بكود التضمين من Edpuzzle -->
+                <iframe 
+                  src="https://edpuzzle.com/embed/media/YOUR_EDPUZZLE_ID"
+                  allowfullscreen
+                  allow="fullscreen; autoplay"
+                  loading="lazy"
+                  title="Edpuzzle interactive video">
+                </iframe>
+              </div>
+              <p class="activity-notes">
+                <strong>تعليمات للطالب:</strong> شاهد الفيديو حتى النهاية، 
+                وأجب عن الأسئلة التي ستظهر داخل الفيديو قبل الانتقال للنشاط التالي.
+              </p>
+              <div class="activity-footer-tags">
+                <span class="small-tag">مستوى: تمهيد</span>
+                <span class="small-tag">هدف: استثارة التفكير</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Wordwall -->
+          <article class="activity-card">
+            <button class="activity-header" type="button">
+              <div class="activity-main-info">
+                <div class="activity-title">
+                  🎮 لعبة مطابقة مفاهيم الأمن الرقمي
+                  <span class="activity-pill">Wordwall</span>
+                </div>
+                <div class="activity-type">نشاط فردي أو جماعي على اللوح التفاعلي</div>
+              </div>
+              <div class="activity-toggle-icon">−</div>
+            </button>
+            <div class="activity-body">
+              <div class="iframe-wrapper">
+                <!-- من Wordwall: My Activities → ... → Embed → Iframe -->
+                <iframe
+                  src="https://wordwall.net/embed/YOUR_WORDWALL_ID"
+                  loading="lazy"
+                  allowfullscreen
+                  title="Wordwall interactive game">
+                </iframe>
+              </div>
+              <p class="activity-notes">
+                <strong>تعليمات للطالب:</strong> اسحب كل مفهوم إلى التعريف الصحيح، 
+                وحاول إنهاء النشاط بأقل عدد من المحاولات.
+              </p>
+              <div class="activity-footer-tags">
+                <span class="small-tag">ترسيخ المفاهيم</span>
+                <span class="small-tag">تعلم قائم على الألعاب</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kahoot -->
+          <article class="activity-card">
+            <button class="activity-header" type="button">
+              <div class="activity-main-info">
+                <div class="activity-title">
+                  🏆 مسابقة ختامية
+                  <span class="activity-pill">Kahoot!</span>
+                </div>
+                <div class="activity-type">تقييم خفيف وممتع في نهاية الدرس</div>
+              </div>
+              <div class="activity-toggle-icon">−</div>
+            </button>
+            <div class="activity-body">
+              <div class="iframe-wrapper">
+                <!-- مثال: https://embed.kahoot.it/KAHOOT_IDENTIFIER -->
+                <iframe
+                  src="https://embed.kahoot.it/YOUR_KAHOOT_ID"
+                  loading="lazy"
+                  allowfullscreen
+                  title="Kahoot quiz">
+                </iframe>
+              </div>
+              <p class="activity-notes">
+                <strong>تعليمات للطالب:</strong> ادخل باسمك الأول وشارك في المسابقة. 
+                الهدف ليس الفوز فقط، بل التأكد من فهمك للمفاهيم الرئيسية.
+              </p>
+              <div class="activity-footer-tags">
+                <span class="small-tag">تقييم تكويني</span>
+                <span class="small-tag">تغذية راجعة فورية</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Liveworksheets -->
+          <article class="activity-card">
+            <button class="activity-header" type="button">
+              <div class="activity-main-info">
+                <div class="activity-title">
+                  📄 ورقة عمل تفاعلية
+                  <span class="activity-pill">Liveworksheets</span>
+                </div>
+                <div class="activity-type">تطبيق فردي مع إمكانية تصحيح تلقائي</div>
+              </div>
+              <div class="activity-toggle-icon">−</div>
+            </button>
+            <div class="activity-body">
+              <div class="iframe-wrapper">
+                <!-- من Liveworksheets: Embed in my website -->
+                <iframe
+                  src="https://www.liveworksheets.com/worksheets/your_liveworksheets_id.html"
+                  loading="lazy"
+                  allowfullscreen
+                  title="Liveworksheets activity">
+                </iframe>
+              </div>
+              <p class="activity-notes">
+                <strong>تعليمات للطالب:</strong> أكمِل الورقة التفاعلية ثم اضغط على
+                <em>Finish</em> حسب إعدادات المعلم (إرسال للمعلم أو تصحيح ذاتي).
+              </p>
+              <div class="activity-footer-tags">
+                <span class="small-tag">تثبيت التعلم</span>
+                <span class="small-tag">دعم الفروق الفردية</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- محتوى إضافي -->
+          <article class="activity-card collapsed">
+            <button class="activity-header" type="button">
+              <div class="activity-main-info">
+                <div class="activity-title">
+                  ⭐ نشاط اختياري إضافي (Genially / Nearpod / Quizizz)
+                  <span class="activity-pill">اختياري</span>
+                </div>
+                <div class="activity-type">ضع هنا أي مورد تفاعلي إضافي مجاني تراه مناسبًا.</div>
+              </div>
+              <div class="activity-toggle-icon">+</div>
+            </button>
+            <div class="activity-body">
+              <div class="iframe-wrapper">
+                <iframe
+                  src="https://view.genially.com/YOUR_GENIALLY_OR_OTHER_ID"
+                  loading="lazy"
+                  allowfullscreen
+                  title="Extra interactive content">
+                </iframe>
+              </div>
+              <p class="activity-notes">
+                يمكنك استخدام هذه المساحة لنشاط إثرائي:
+                عرض تفاعلي من Genially، درس Nearpod مضمّن، أو اختبار Quizizz مدمج عبر iframe.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- عمود الأهداف والخطوات -->
+      <aside class="side-panel">
+        <div class="side-block">
+          <h3>الأهداف التعليمية (مثال)</h3>
+          <ul>
+            <li>أن يعرّف الطالب مفهوم الأمن الرقمي وسلوكيات المواطن الرقمي المسؤول.</li>
+            <li>أن يميّز بين كلمات المرور القوية والضعيفة من خلال أمثلة عملية.</li>
+            <li>أن يطبّق مهاراته في بيئات رقمية تفاعلية متنوعة.</li>
+          </ul>
+        </div>
+
+        <div class="side-block">
+          <h3>خطة تنفيذ الحصة</h3>
+          <div class="lesson-steps">
+            <div class="step-pill">
+              <span class="step-number">1</span>
+              تمهيد (٥ دقائق): سؤال شفهي أو صورة مثيرة للنقاش حول مواقف يومية على الإنترنت.
+            </div>
+            <div class="step-pill">
+              <span class="step-number">2</span>
+              فيديو Edpuzzle (١٠–١٢ دقيقة): مشاهدة موجهة مع أسئلة قصيرة داخل الفيديو.
+            </div>
+            <div class="step-pill">
+              <span class="step-number">3</span>
+              لعبة Wordwall أو Kahoot (١٠–١٥ دقيقة): تعزيز المفاهيم بطريقة ممتعة.
+            </div>
+            <div class="step-pill">
+              <span class="step-number">4</span>
+              ورقة عمل Liveworksheets (١٠–١٥ دقيقة): تطبيق فردي وتوثيق النتائج.
+            </div>
+            <div class="step-pill">
+              <span class="step-number">5</span>
+              ختام (٥ دقائق): مشاركة أهم ما تعلّمه الطالب + واجب بيتي اختياري.
+            </div>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <h3>ملاحظات للمعلم</h3>
+          <ul>
+            <li>تأكّد من أن جميع الروابط <strong>Public</strong> وقابلة للتضمين (Embed).</li>
+            <li>جرّب فتح الموقع من متصفّح الطالب قبل الحصة للتأكّد من عمل جميع الإطارات.</li>
+            <li>يمكنك تكرار هذا القالب لوحدات أخرى فقط بتغيير النصوص وروابط التضمين.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+      <div>تم إعداد هذا النموذج لأغراض عرض درس تفاعلي واحد أو وحدة تعليمية.</div>
+      <div class="footer-links">
+        <a href="#" target="_blank" rel="noopener">ملف تعريفي بالمعلم</a>
+        <a href="#" target="_blank" rel="noopener">سياسة الاستخدام</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // طيّ / فتح الكروت التفاعلية
+    document.querySelectorAll(".activity-card").forEach(function(card) {
+      const header = card.querySelector(".activity-header");
+      const icon = card.querySelector(".activity-toggle-icon");
+
+      header.addEventListener("click", function() {
+        const collapsed = card.classList.toggle("collapsed");
+        if (icon) icon.textContent = collapsed ? "+" : "−";
+      });
+    });
+
+    // بوابة الدخول برمز بسيط
+    (function() {
+      // ✏ غيّر رمز الدرس كما تحب
+      const CORRECT_CODE = "ipa2025";
+
+      const gate = document.getElementById("access-gate");
+      const input = document.getElementById("access-code-input");
+      const button = document.getElementById("access-code-button");
+      const errorMsg = document.getElementById("access-error");
+
+      if (!gate || !input || !button) return;
+
+      function tryAccess() {
+        const value = (input.value || "").trim();
+        if (value === CORRECT_CODE) {
+          gate.style.opacity = "0";
+          gate.style.pointerEvents = "none";
+          setTimeout(() => gate.remove(), 400);
+        } else {
+          errorMsg.style.display = "block";
+          input.value = "";
+          input.focus();
+        }
+      }
+
+      button.addEventListener("click", tryAccess);
+      input.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+          tryAccess();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
