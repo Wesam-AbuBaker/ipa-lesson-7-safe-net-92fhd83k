@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <title>درس تفاعلي - أكاديمية الرواد</title>
@@ -41,7 +42,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: linear-gradient(90deg, rgba(138,14,131,0.96), rgba(244,179,33,0.96));
+      background: linear-gradient(90deg, rgba(138, 14, 131, 0.96), rgba(244, 179, 33, 0.96));
       color: #fff;
       padding: 10px 24px;
       display: flex;
@@ -69,7 +70,7 @@
       justify-content: center;
       font-weight: 800;
       font-size: 0.9rem;
-      box-shadow: 0 0 0 3px rgba(255,255,255,0.45);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45);
     }
 
     .top-bar-meta {
@@ -83,7 +84,7 @@
     .top-chip {
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.6);
+      border: 1px solid rgba(255, 255, 255, 0.6);
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -97,7 +98,7 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, rgba(138,14,131,0.06), rgba(244,179,33,0.12));
+      background: linear-gradient(135deg, rgba(138, 14, 131, 0.06), rgba(244, 179, 33, 0.12));
       border-radius: 28px;
       padding: 24px 22px 22px;
       box-shadow: var(--shadow-soft);
@@ -118,8 +119,8 @@
       gap: 8px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid rgba(138,14,131,0.3);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(138, 14, 131, 0.3);
       font-size: 0.85rem;
       color: var(--color-primary);
       margin-bottom: 8px;
@@ -160,10 +161,10 @@
     }
 
     .meta-card {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 14px;
       padding: 8px 10px;
-      border: 1px solid rgba(138,14,131,0.12);
+      border: 1px solid rgba(138, 14, 131, 0.12);
     }
 
     .meta-label {
@@ -177,10 +178,10 @@
     }
 
     .hero-checklist {
-      background: rgba(255,255,255,0.96);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: 22px;
       padding: 14px 16px 12px;
-      border: 1px dashed rgba(138,14,131,0.32);
+      border: 1px dashed rgba(138, 14, 131, 0.32);
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -216,6 +217,31 @@
       margin-top: 6px;
       font-size: 0.82rem;
       color: var(--color-muted);
+    }
+
+    /* عنصر يمثل خطوة واحدة */
+    .hero-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(138, 14, 131, 0.18);
+    }
+
+    /* دائرة رقم الخطوة */
+    .hero-step-number {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     /* Layout */
@@ -265,7 +291,7 @@
       background: var(--color-surface);
       border-radius: var(--radius-lg);
       padding: 10px 12px 12px;
-      border: 1px solid rgba(138,14,131,0.12);
+      border: 1px solid rgba(138, 14, 131, 0.12);
       box-shadow: 0 10px 24px rgba(41, 1, 62, 0.08);
       transition: transform 0.16s ease, box-shadow 0.16s ease;
     }
@@ -313,7 +339,7 @@
       font-size: 0.75rem;
       padding: 2px 8px;
       border-radius: 999px;
-      background: rgba(244,179,33,0.12);
+      background: rgba(244, 179, 33, 0.12);
       color: #9a6700;
     }
 
@@ -321,7 +347,7 @@
       width: 26px;
       height: 26px;
       border-radius: 50%;
-      border: 1px solid rgba(138,14,131,0.28);
+      border: 1px solid rgba(138, 14, 131, 0.28);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -331,7 +357,7 @@
 
     .activity-card.collapsed .activity-toggle-icon {
       transform: rotate(180deg);
-      background: rgba(138,14,131,0.03);
+      background: rgba(138, 14, 131, 0.03);
       color: var(--color-primary);
     }
 
@@ -348,11 +374,12 @@
     .iframe-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
+      /* 16:9 */
       border-radius: var(--radius-md);
       overflow: hidden;
       background: #f3ecff;
-      border: 1px solid rgba(138,14,131,0.16);
+      border: 1px solid rgba(138, 14, 131, 0.16);
       margin-bottom: 8px;
     }
 
@@ -380,17 +407,17 @@
     .small-tag {
       padding: 3px 7px;
       border-radius: 999px;
-      background: rgba(138,14,131,0.08);
+      background: rgba(138, 14, 131, 0.08);
       color: var(--color-primary);
     }
 
     /* Side panel */
     .side-panel {
-      background: rgba(255,255,255,0.96);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: 24px;
       padding: 16px 16px 18px;
-      border: 1px solid rgba(138,14,131,0.16);
-      box-shadow: 0 14px 32px rgba(41,1,62,0.08);
+      border: 1px solid rgba(138, 14, 131, 0.16);
+      box-shadow: 0 14px 32px rgba(41, 1, 62, 0.08);
       display: flex;
       flex-direction: column;
       gap: 14px;
@@ -399,8 +426,8 @@
     .side-block {
       padding: 10px 10px 8px;
       border-radius: 16px;
-      background: linear-gradient(135deg, rgba(138,14,131,0.03), rgba(244,179,33,0.04));
-      border: 1px dashed rgba(138,14,131,0.26);
+      background: linear-gradient(135deg, rgba(138, 14, 131, 0.03), rgba(244, 179, 33, 0.04));
+      border: 1px dashed rgba(138, 14, 131, 0.26);
     }
 
     .side-block h3 {
@@ -417,7 +444,7 @@
       line-height: 1.7;
     }
 
-    .side-block li + li {
+    .side-block li+li {
       margin-top: 4px;
     }
 
@@ -431,8 +458,8 @@
     .step-pill {
       padding: 6px 8px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(138,14,131,0.15);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(138, 14, 131, 0.15);
       font-size: 0.84rem;
       display: flex;
       align-items: center;
@@ -492,31 +519,31 @@
     }
 
     #access-gate-card {
-      background: rgba(255,255,255,0.98);
+      background: rgba(255, 255, 255, 0.98);
       padding: 24px 20px;
       border-radius: 18px;
       width: min(360px, 92vw);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
       text-align: center;
       font-family: "Tajawal", system-ui;
     }
 
     #access-gate-card h2 {
       margin: 0 0 8px;
-      color:#8a0e83;
+      color: #8a0e83;
     }
 
     #access-gate-card p {
       margin: 0 0 16px;
       font-size: 0.9rem;
-      color:#5f4c70;
+      color: #5f4c70;
     }
 
     #access-code-input {
       width: 100%;
       padding: 8px 10px;
       border-radius: 10px;
-      border:1px solid #c3b4dd;
+      border: 1px solid #c3b4dd;
       font-family: inherit;
       text-align: center;
     }
@@ -526,11 +553,11 @@
       width: 100%;
       padding: 8px 10px;
       border-radius: 999px;
-      border:none;
-      background:#8a0e83;
-      color:white;
-      font-weight:600;
-      cursor:pointer;
+      border: none;
+      background: #8a0e83;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
     }
 
     #access-code-button:hover {
@@ -540,11 +567,12 @@
     #access-error {
       margin: 8px 0 0;
       font-size: 0.8rem;
-      color:#c0132f;
-      display:none;
+      color: #c0132f;
+      display: none;
     }
   </style>
 </head>
+
 <body>
 
   <!-- بوابة رمز الدخول -->
@@ -584,21 +612,23 @@
           <span class="badge-dot"></span>
           وحدة تفاعلية جاهزة للعرض
         </div>
-        <h1>الوحدة: الأمن الرقمي والسلوك المسؤول على الإنترنت</h1>
+        <h1>الدرس: مكوّنات الحاسوب المادية – المهارات الرقمية للصف السابع</h1>
         <p>
-          في هذه الوحدة التفاعلية يتعرّف الطلبة إلى أساسيات الأمن الرقمي، 
-          كلمات المرور القوية، وآداب التواصل عبر الإنترنت من خلال فيديو تفاعلي، 
-          لعبة، وورقة عمل وأنشطة تقييمية.
+          في هذا الدرس يتعرّف الطلبة إلى مكوّنات الحاسوب المادية (Hardware)،
+          ويميزون بين المكوّنات الداخلية والمكوّنات الخارجية (وحدات الإدخال والإخراج)،
+          وكيف تعمل هذه الأجزاء معًا ليقوم الحاسوب بمهامه المختلفة وفق المنهاج الأردني الجديد للمهارات الرقمية للصف
+          السابع.
         </p>
+
 
         <div class="hero-meta-grid">
           <div class="meta-card">
             <div class="meta-label">الصف المستهدف</div>
-            <div class="meta-value">الصف السابع / الثامن</div>
+            <div class="meta-value">الصف السابع الأساسي</div>
           </div>
           <div class="meta-card">
             <div class="meta-label">المدة المقترحة</div>
-            <div class="meta-value">٤٥ - ٦٠ دقيقة</div>
+            <div class="meta-value">٤٥ دقيقة (حصّة واحدة)</div>
           </div>
           <div class="meta-card">
             <div class="meta-label">نمط التنفيذ</div>
@@ -611,24 +641,45 @@
         <div class="hero-checklist-title">
           <span>سيخرج الطالب من الحصة وهو قادر على:</span>
         </div>
-        <ul style="margin: 6px 0 0; padding-right: 18px; font-size: 0.86rem; color: var(--color-muted); line-height: 1.7;">
-          <li>تمييز السلوكيات الآمنة وغير الآمنة عند استخدام الإنترنت.</li>
-          <li>تطبيق قواعد بسيطة لإنشاء كلمة مرور قوية.</li>
-          <li>التفاعل مع محتوى رقمي باستخدام منصات تفاعلية متعددة.</li>
+        <ul
+          style="margin: 6px 0 0; padding-right: 18px; font-size: 0.86rem; color: var(--color-muted); line-height: 1.7;">
+          <li>تعريف المكوّنات المادية للحاسوب والتمييز بينها وبين المكوّنات البرمجية بشكل عام.</li>
+          <li>تصنيف المكوّنات المادية إلى مكوّنات داخلية ومكوّنات خارجية (وحدات إدخال وإخراج).</li>
+          <li>ذكر أمثلة شائعة على وحدات الإدخال ووحدات الإخراج وبيان وظيفة كل منها.</li>
+          <li>توضيح دور بعض المكوّنات الداخلية الرئيسة مثل: المعالج، الذاكرة، القرص الصلب، ومزوّد الطاقة.</li>
         </ul>
 
+
         <div class="hero-tags">
-          <span class="hero-tag">تكنولوجيا تعليم</span>
-          <span class="hero-tag">تعلم مدمج</span>
-          <span class="hero-tag">تعلم قائم على الألعاب</span>
+          <span class="hero-tag">مكوّنات الحاسوب المادية</span>
+          <span class="hero-tag">المهارات الرقمية – صف سابع</span>
+          <span class="hero-tag">أنظمة الحوسبة</span>
         </div>
 
+
         <div class="hero-mini-steps">
-          <span>١️⃣ تمهيد قصير</span>
-          <span>٢️⃣ فيديو تفاعلي (Edpuzzle)</span>
-          <span>٣️⃣ لعبة Wordwall / Kahoot</span>
-          <span>٤️⃣ ورقة عمل Liveworksheets</span>
+          <div class="hero-step">
+            <span class="hero-step-number">1</span>
+            <span>تمهيد: من ماذا يتكوّن حاسوبك؟</span>
+          </div>
+
+          <div class="hero-step">
+            <span class="hero-step-number">2</span>
+            <span>فيديو تفاعلي: مكوّنات الحاسوب المادية</span>
+          </div>
+
+          <div class="hero-step">
+            <span class="hero-step-number">3</span>
+            <span>لعبة تصنيف: إدخال / إخراج / داخلية</span>
+          </div>
+
+          <div class="hero-step">
+            <span class="hero-step-number">4</span>
+            <span>ورقة عمل لتثبيت المفاهيم</span>
+          </div>
         </div>
+
+
       </aside>
     </section>
 
@@ -651,27 +702,24 @@
             <button class="activity-header" type="button">
               <div class="activity-main-info">
                 <div class="activity-title">
-                  🎥 فيديو تمهيدي تفاعلي
+                  🎥 فيديو تعريفي بمكوّنات الحاسوب المادية
                   <span class="activity-pill">Edpuzzle</span>
                 </div>
-                <div class="activity-type">مشاهدة موجهة + أسئلة قصيرة داخل الفيديو</div>
+                <div class="activity-type">مشاهدة موجهة تشرح المكوّنات الداخلية والخارجية مع أسئلة قصيرة.</div>
               </div>
               <div class="activity-toggle-icon">−</div>
             </button>
             <div class="activity-body">
               <div class="iframe-wrapper">
                 <!-- استبدل قيمة src بكود التضمين من Edpuzzle -->
-                <iframe 
-                  src="https://edpuzzle.com/embed/media/YOUR_EDPUZZLE_ID"
-                  allowfullscreen
-                  allow="fullscreen; autoplay"
-                  loading="lazy"
-                  title="Edpuzzle interactive video">
+                <iframe src="https://edpuzzle.com/embed/media/YOUR_EDPUZZLE_ID" allowfullscreen
+                  allow="fullscreen; autoplay" loading="lazy" title="Edpuzzle interactive video">
                 </iframe>
               </div>
               <p class="activity-notes">
-                <strong>تعليمات للطالب:</strong> شاهد الفيديو حتى النهاية، 
-                وأجب عن الأسئلة التي ستظهر داخل الفيديو قبل الانتقال للنشاط التالي.
+                <strong>تعليمات للطالب:</strong>
+                شاهد الفيديو بتركيز، وأجب عن الأسئلة التي تظهر أثناء المشاهدة،
+                وحاول أن تكتب في دفترك مثالًا على مكوّن داخلي وآخر خارجي.
               </p>
               <div class="activity-footer-tags">
                 <span class="small-tag">مستوى: تمهيد</span>
@@ -685,26 +733,24 @@
             <button class="activity-header" type="button">
               <div class="activity-main-info">
                 <div class="activity-title">
-                  🎮 لعبة مطابقة مفاهيم الأمن الرقمي
+                  🎮 لعبة تصنيف: إدخال / إخراج / مكوّنات داخلية
                   <span class="activity-pill">Wordwall</span>
                 </div>
-                <div class="activity-type">نشاط فردي أو جماعي على اللوح التفاعلي</div>
+                <div class="activity-type">نشاط فردي أو جماعي على اللوح التفاعلي لتصنيف مكوّنات الحاسوب.</div>
               </div>
               <div class="activity-toggle-icon">−</div>
             </button>
             <div class="activity-body">
               <div class="iframe-wrapper">
                 <!-- من Wordwall: My Activities → ... → Embed → Iframe -->
-                <iframe
-                  src="https://wordwall.net/embed/YOUR_WORDWALL_ID"
-                  loading="lazy"
-                  allowfullscreen
+                <iframe src="https://wordwall.net/embed/YOUR_WORDWALL_ID" loading="lazy" allowfullscreen
                   title="Wordwall interactive game">
                 </iframe>
               </div>
               <p class="activity-notes">
-                <strong>تعليمات للطالب:</strong> اسحب كل مفهوم إلى التعريف الصحيح، 
-                وحاول إنهاء النشاط بأقل عدد من المحاولات.
+                <strong>تعليمات للطالب:</strong>
+                صنّف كل مكوّن يظهر أمامك إلى الفئة الصحيحة:
+                وحدة إدخال، وحدة إخراج، أو مكوّن داخلي، وحاول إنهاء النشاط بأقل عدد من الأخطاء.
               </p>
               <div class="activity-footer-tags">
                 <span class="small-tag">ترسيخ المفاهيم</span>
@@ -718,26 +764,23 @@
             <button class="activity-header" type="button">
               <div class="activity-main-info">
                 <div class="activity-title">
-                  🏆 مسابقة ختامية
+                  🏆 مسابقة سريعة في مكوّنات الحاسوب المادية
                   <span class="activity-pill">Kahoot!</span>
                 </div>
-                <div class="activity-type">تقييم خفيف وممتع في نهاية الدرس</div>
+                <div class="activity-type">أسئلة اختيار من متعدد لمراجعة المفاهيم الرئيسة في نهاية الدرس.</div>
               </div>
               <div class="activity-toggle-icon">−</div>
             </button>
             <div class="activity-body">
               <div class="iframe-wrapper">
                 <!-- مثال: https://embed.kahoot.it/KAHOOT_IDENTIFIER -->
-                <iframe
-                  src="https://embed.kahoot.it/YOUR_KAHOOT_ID"
-                  loading="lazy"
-                  allowfullscreen
-                  title="Kahoot quiz">
+                <iframe src="https://embed.kahoot.it/YOUR_KAHOOT_ID" loading="lazy" allowfullscreen title="Kahoot quiz">
                 </iframe>
               </div>
               <p class="activity-notes">
-                <strong>تعليمات للطالب:</strong> ادخل باسمك الأول وشارك في المسابقة. 
-                الهدف ليس الفوز فقط، بل التأكد من فهمك للمفاهيم الرئيسية.
+                <strong>تعليمات للطالب:</strong>
+                شارك في المسابقة، وحاول الإجابة بسرعة ودقة على أسئلة حول وحدات الإدخال
+                والإخراج والمكوّنات الداخلية، ولا تنسَ مراجعة الأسئلة التي أخطأت بها.
               </p>
               <div class="activity-footer-tags">
                 <span class="small-tag">تقييم تكويني</span>
@@ -751,26 +794,24 @@
             <button class="activity-header" type="button">
               <div class="activity-main-info">
                 <div class="activity-title">
-                  📄 ورقة عمل تفاعلية
+                  📄 ورقة عمل: جدول مكوّنات الحاسوب المادية
                   <span class="activity-pill">Liveworksheets</span>
                 </div>
-                <div class="activity-type">تطبيق فردي مع إمكانية تصحيح تلقائي</div>
+                <div class="activity-type">ورقة عمل تفاعلية لتثبيت تصنيف ووظائف المكوّنات المادية.</div>
               </div>
               <div class="activity-toggle-icon">−</div>
             </button>
             <div class="activity-body">
               <div class="iframe-wrapper">
                 <!-- من Liveworksheets: Embed in my website -->
-                <iframe
-                  src="https://www.liveworksheets.com/worksheets/your_liveworksheets_id.html"
-                  loading="lazy"
-                  allowfullscreen
-                  title="Liveworksheets activity">
+                <iframe src="https://www.liveworksheets.com/worksheets/your_liveworksheets_id.html" loading="lazy"
+                  allowfullscreen title="Liveworksheets activity">
                 </iframe>
               </div>
               <p class="activity-notes">
-                <strong>تعليمات للطالب:</strong> أكمِل الورقة التفاعلية ثم اضغط على
-                <em>Finish</em> حسب إعدادات المعلم (إرسال للمعلم أو تصحيح ذاتي).
+                <strong>تعليمات للطالب:</strong>
+                أكمل الورقة بكتابة اسم كل مكوّن، وتحديد نوعه (داخلي/خارجي)
+                وفئة الاستخدام (إدخال/إخراج/تخزين) إن وجدت، ثم أرسل الإجابات حسب تعليمات المعلم.
               </p>
               <div class="activity-footer-tags">
                 <span class="small-tag">تثبيت التعلم</span>
@@ -793,10 +834,7 @@
             </button>
             <div class="activity-body">
               <div class="iframe-wrapper">
-                <iframe
-                  src="https://view.genially.com/YOUR_GENIALLY_OR_OTHER_ID"
-                  loading="lazy"
-                  allowfullscreen
+                <iframe src="https://view.genially.com/YOUR_GENIALLY_OR_OTHER_ID" loading="lazy" allowfullscreen
                   title="Extra interactive content">
                 </iframe>
               </div>
@@ -815,10 +853,12 @@
         <div class="side-block">
           <h3>الأهداف التعليمية (مثال)</h3>
           <ul>
-            <li>أن يعرّف الطالب مفهوم الأمن الرقمي وسلوكيات المواطن الرقمي المسؤول.</li>
-            <li>أن يميّز بين كلمات المرور القوية والضعيفة من خلال أمثلة عملية.</li>
-            <li>أن يطبّق مهاراته في بيئات رقمية تفاعلية متنوعة.</li>
+            <li>أن يعرّف الطالب المكوّنات المادية للحاسوب بوصفها الأجزاء التي يمكن لمسها ورؤيتها.</li>
+            <li>أن يميّز بين المكوّنات المادية الداخلية والمكوّنات المادية الخارجية.</li>
+            <li>أن يصنّف أمثلة معطاة إلى: وحدات إدخال، وحدات إخراج، مكوّنات داخلية.</li>
+            <li>أن يربط بين تكامل عمل المكوّنات المختلفة وبين قدرة الحاسوب على تنفيذ الأوامر.</li>
           </ul>
+
         </div>
 
         <div class="side-block">
@@ -826,25 +866,27 @@
           <div class="lesson-steps">
             <div class="step-pill">
               <span class="step-number">1</span>
-              تمهيد (٥ دقائق): سؤال شفهي أو صورة مثيرة للنقاش حول مواقف يومية على الإنترنت.
+              تمهيد (٥ دقائق): عرض صورة لحاسوب كامل وسؤال الطلبة: ما الأجزاء التي يمكنكم تسميتها؟ وما أهميتها؟
             </div>
             <div class="step-pill">
               <span class="step-number">2</span>
-              فيديو Edpuzzle (١٠–١٢ دقيقة): مشاهدة موجهة مع أسئلة قصيرة داخل الفيديو.
+              فيديو Edpuzzle (١٠–١٢ دقيقة): تعريف بالمكوّنات المادية، والفرق بين المكوّنات الداخلية والخارجية مع أسئلة
+              قصيرة أثناء المشاهدة.
             </div>
             <div class="step-pill">
               <span class="step-number">3</span>
-              لعبة Wordwall أو Kahoot (١٠–١٥ دقيقة): تعزيز المفاهيم بطريقة ممتعة.
+              لعبة Wordwall / Kahoot (١٠–١٥ دقيقة): تصنيف الأجزاء إلى وحدات إدخال، وحدات إخراج، ومكوّنات داخلية.
             </div>
             <div class="step-pill">
               <span class="step-number">4</span>
-              ورقة عمل Liveworksheets (١٠–١٥ دقيقة): تطبيق فردي وتوثيق النتائج.
+              ورقة عمل Liveworksheets (١٠–١٥ دقيقة): إكمال جدول يضم اسم المكوّن، نوعه (داخلي/خارجي)، ووظيفته.
             </div>
             <div class="step-pill">
               <span class="step-number">5</span>
-              ختام (٥ دقائق): مشاركة أهم ما تعلّمه الطالب + واجب بيتي اختياري.
+              ختام (٣–٥ دقائق): سؤال انعكاسي: ما المكوّن الذي تعتقد أنه الأهم؟ ولماذا؟ + واجب اختياري قصير.
             </div>
           </div>
+
         </div>
 
         <div class="side-block">
@@ -870,18 +912,18 @@
 
   <script>
     // طيّ / فتح الكروت التفاعلية
-    document.querySelectorAll(".activity-card").forEach(function(card) {
+    document.querySelectorAll(".activity-card").forEach(function (card) {
       const header = card.querySelector(".activity-header");
       const icon = card.querySelector(".activity-toggle-icon");
 
-      header.addEventListener("click", function() {
+      header.addEventListener("click", function () {
         const collapsed = card.classList.toggle("collapsed");
         if (icon) icon.textContent = collapsed ? "+" : "−";
       });
     });
 
     // بوابة الدخول برمز بسيط
-    (function() {
+    (function () {
       // ✏ غيّر رمز الدرس كما تحب
       const CORRECT_CODE = "ipa2025";
 
@@ -906,7 +948,7 @@
       }
 
       button.addEventListener("click", tryAccess);
-      input.addEventListener("keydown", function(e) {
+      input.addEventListener("keydown", function (e) {
         if (e.key === "Enter") {
           tryAccess();
         }
@@ -914,4 +956,5 @@
     })();
   </script>
 </body>
+
 </html>
